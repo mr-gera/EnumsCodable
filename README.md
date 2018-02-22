@@ -1,13 +1,19 @@
 # EnumsCodable DONE
 
 func enumDecode<T:Codable>(from decoder: Decoder, defaultValue: T) -> T {    
+
     var result = defaultValue    
+    
     do {
+    
         let key = try decoder.singleValueContainer().decode(T.self)
         result = key
+        
     } catch {
+    
     }    
     return result
+    
 }
 
 public enum Enumy: String, Codable {
