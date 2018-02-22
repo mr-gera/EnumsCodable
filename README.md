@@ -18,9 +18,7 @@ public enum Enumy: String, Codable {
     case two
     case wrongValue
     case wrongType
-    
-    
-    // MARK: - Decodable
+
     public init(from decoder: Decoder) throws {
         guard let enumy = Enumy(rawValue: enumDecode(from: decoder, defaultValue: Enumy.wrongType.rawValue)) else {
             self = .wrongType
